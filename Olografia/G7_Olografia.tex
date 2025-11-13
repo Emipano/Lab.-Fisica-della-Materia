@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[italian]{babel}
+\usepackage[nopatch]{microtype}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{tikzducks}
+\usepackage{caption}
+\usepackage{cuted}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\geometry{left=0.7in, right=0.7in, top=1in, bottom=1.0in} 
+\setlist[itemize]{label=\small$\bullet$}
+
+\title{\Large Olografia}
+% Riduci la dimensione del titolo
+\author{\small \textit{Gruppo 7: Valerio Pecchia, Emiliano Bracci, Lorenzo Guglielmi}}  % Riduci la dimensione degli autori
+\date{\small 11 Novembre 2025}
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+Questa esperienza è divisa in due parti. Nella prima abbiamo ricostruito l'immagine tridimensionale di un oggetto tramite la tecnica dell'olografia, che si basa sulla registrazione di pattern di interferenza su una lastra fotosensibile. 
+Per misurare il tempo di esposizione corretto abbiamo mappato l'intensità incidente sulla lastra fotosensibile tramite un fotodiodo.
+Nella seconda parte dell'espezienza abbiamo realizzato un ologramma a intervallo di tempo di un cubetto, sul quale per metà del tempo di esposizione è stata applicata una forza tramite un pistoncino. Questo si traduce in frange d'interferenza visibili sull'immagine finale. 
+\end{abstract}
+
+
+
+\begin{multicols}{2}
+\section{Introduzione}
+L'olografia è una tecnologia che sfrutta le leggi dell'ottica per produrre un ologramma, ovvero un immagine tridimensionale di un oggetto campione.
+Alla base del funzionamento dell'olografia c'è una lastra fotosensibile in grado di registrare informazioni di intensità e fase dell'onda elettromagnetica incidente. Preso un campo elettrico oggetto $$E_1(\vec{r},t) = \text{Re}[a_1(\vec{r})e^{-i \omega t}]$$ e uno di riferimento $$E_2(\vec{r},t) = \text{Re}[A_2(\vec{r})e^{-i \omega t}]$$ che illuminano la lastra fotosensibile, si identifica su di essa un pattern interferenziale che viene registrato sfruttando, ad esempio, la rottura di alcuni legami o i cambiamenti di struttura molecolare. \\
+Una volta registrata questa informazione sulla lastra, tramite il processo di ricostruzione, la si illumina con un terzo fascio $B(x,y)$ e si ottiene un campo elettrico in uscita pari a
+\begin{equation}
+    B_{out} = t_{bias}B(x,y)+\beta'a_1a_1^*B + \beta'a_1A_2^*B + \beta'A_2a_1^*B \,\text{,}
+\end{equation}
+dove si nota una proporzionalità al campo elettrico oggetto nel terzo termine. Proprio questa proporzionalità ci permette quindi di ottenere il campo elettrico dell'oggetto in uscita dalla lastra illuminata con il terzo fascio e, dunque, l'ologramma.
+
+In questa esperienza utilizzeremo un laser He-Ne $\lambda = 633\,\text{nm}$ come fascio oggetto, riferimento e anche come fascio di ricostruzione e faremo un ologramma statico di un modellino di una ``Pantera Rosa" e uno dinamico di un cubo di Teflon sottoposto a pressione esercitata da un'elettrocalamita.
+
+\section{Apparato sperimentale}
+L'esperimento è stato realizzato sopra un banco ottico. L'apparato sperimentale utilizzato per creare dei due ologrammi è il seguente:
+
+\begin{itemize}
+\item un laser He-Ne rosso a $633$ nm;
+\item uno \textit{shutter};
+\item un filtro spaziale, che serve a selezionare il centro del fascio gaussiano in uscita dal laser;
+\item un \textit{beam splitter}  $95\% $ - $5\% $, posto in uscita dal filtro spaziale;
+\item due specchi, chiamati negli schemi ``M1" e ``M2";
+\item una Pantera Rosa di plastica in miniatura colorata di bianco, per realizzare l'ologramma statico;
+\item un blocco di Teflon montato su un podio con un pistone con cui comprimere il blocco, per realizzare l'ologramma dinamico;
+\item due lastre di vetro (una per ogni ologramma) con una sottile pellicola fotosensibile applicata su una delle due facce;
+\item un fotodiodo, utilizzato per rilevare la quantità di radiazione incidente sulle lastre;
+\item una camera oscura;
+\item soluzioni di sviluppo e fissaggio e acqua distillata per sviluppare e stabilizzare gli ologrammi.
+
+\end{itemize}
+Lo \textit{shutter} e il pistone vengono azionati a distanza: il primo dall'esterno della stanza; il secondo dall'interno della stanza ma lontani dal banco ottico tramite elettrocalamita, così da non disturbare il segnale durante l'acquisizione dell'ologramma. In figura \ref{Apparato}, uno schema del banco ottico.
+
+\begin{center}
+    \includegraphics[width=0.9\linewidth]{Apparato Olo-1.jpg}
+    \captionsetup{type=figure}
+    \caption{Apparato sperimentale.}
+    \label{Apparato}
+\end{center}
+
+
+\section{Ologramma statico}
+Il processo si articola in tre fasi: allineamento dei componenti ottici, mappatura dell'intensità e ologramma.
+\subsection{Allineamento}
+Di seguito l'algoritmo utilizzato per allineare i componenti ottici in modo da rendere la differenza di cammino ottico $l << l_c$, con $l_c\sim 20\,$cm lunghezza di coerenza del laser:
+\begin{itemize}
+    \item fissiamo due punti: il laser in ingresso e il supporto della piastrina fotosensibile;
+    \item fissiamo $x$, $y$ e $\phi$ di M2, in modo da creare il fascio di riferimento (laser-M2-piastrina);
+    \item posizioniamo il podio con l'oggetto di fronte alla piastrina;
+    \item fissiamo la posizione nel piano $xy$ di M1 vicino alla piastrina, in modo da illuminare l'oggetto il più frontalmente possibile;
+    \item fissiamo $x$ e $y$ del beam splitter in modo da creare due cammini ottici (fascio di riferimento e fascio oggetto) entro la lunghezza di coerenza del laser;
+    \item fissiamo $\phi$ del beam splitter in modo da allineare il fascio laser-beam splitter-M1;
+    \item fissiamo $\phi$ di M2 per centrare l'oggetto (Pantera Rosa) sopra al podio;
+    \item eventuali spostamenti lungo l'asse perpendicolare alla superficie dello specchio M2 permettono di variare il cammino ottico del fascio oggetto, in caso questo non sia uguale (entro qualche centimetro) a quello del fascio di riferimento.
+\end{itemize}
+Per misurare i cammini ottici è stato utilizzato un metro a nastro. L'apparato allineato risulta come in figura \ref{Apparato}.
+
+\subsection{Mappatura della potenza}
+Per imprimere sulla lastra le informazioni derivanti dal campo elettrico, sono necessari $50\, \mu$J. Si misura dunque la potenza incidente su una piastra metallica di dimensioni analoghe alla lastra con un fotodiodo di area $1\,$cm$^2$. Il fotodiodo misura un voltaggio che viene convertito in potenza grazie alla seguente retta di calibrazione:
+\label{map3.2}
+\begin{equation}
+    P\,[\mu \text{W}] = -0.16925 + 2.6592\text{V}\,\text{[V]}\,.
+\end{equation}
+Utilizzando il codice consultabile a questo \href{https://github.com/Emipano/Lab.-Fisica-della-Materia/tree/main/Olografia}{link}\footnote{\href{https://github.com/Emipano/Lab.-Fisica-della-Materia/tree/main/Olografia}{https://github.com/Emipano/Lab.-Fisica-della-Materia/tree/main/Olografia}}, si ottiene la mappa in figura \ref{Mappa}.
+
+\begin{center}
+    \includegraphics[width=0.7\linewidth]{Screenshot 2025-11-12 alle 17.27.54.png}
+    \captionsetup{type=figure}
+    \caption{Mappatura della potenza totale sulla piastrina}
+    \label{Mappa}
+\end{center}
+
+Da questa si ottiene un tempo di esposizione, mediando la potenza su tutta la lastra, pari a $t = 16.8\,$s.
+
+\subsection{Registrazione e Ricostruzione}
+\label{Reg&Ric}
+La procedura per ottenere l'ologramma statico è la seguente. 
+Avendo cura di lavorare a luce spenta e shutter chiuso, abbiamo estratto una lastra dalla scatola nera. Dopo aver individuato la faccia fotosensibile (quella più appiccicosa al tatto), la si posiziona nell'apposito supporto. Dopodiché si richiude la scatola e si apre lo shutter per un tempo pari al tempo di esposizione. Quindi si ripone la lastra nella camera oscura, si riaccende la luce e si procede con sviluppo e fissaggio. Tale procedimento consiste in dettaglio in un bagno di: 5 minuti di soluzione di sviluppo, 5 minuti di acqua distillata, 5 minuti di soluzione di fissaggio, 5 minuti di acqua distillata.\\
+Una volta lasciata ad asciugare per 30 minuti, si ripone nuovamente nel suo supporto e si apre lo shutter. Si ottiene dunque l'ologramma statico della Pantera Rosa come visibile in figura \ref{fig:pantera}.
+
+\end{multicols}
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \includegraphics[width=0.78\linewidth]{CBAC34F1-1653-419B-B40D-82C9DC9CD31B_1_201_a.jpeg}
+        \captionsetup{type=figure}
+        \caption{Ologramma della Pantera Rosa.}
+        \label{fig:pantera}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \includegraphics[width=0.75\linewidth]{Screenshot 2025-11-13 alle 12.00.27.png}
+        \captionsetup{type=figure}
+        \caption{Mappatura della potenza totale sulla piastrina.}
+        \label{fig:map_dinamico}
+    \end{minipage}
+\end{figure}
+
+
+\begin{multicols}{2}
+\section{Ologramma a intervallo di tempo}
+L'ologramma dinamico si ottiene utilizzando un cubo di Teflon e comprimendolo per metà del tempo di esposizione.\\
+\subsection{Allineamento}
+La procedura di allineamento è analoga a quella dell'ologramma statico, assicurandosi di posizionare il cubo di Teflon al centro del fascio riflesso dallo specchio M1.
+\subsection{Mappatura della potenza}
+Procedendo come in sezione \ref{map3.2}, abbiamo ottenuto la mappa in figura \ref{fig:map_dinamico}.
+
+Da questa abbiamo ricavato un tempo di esposizione pari a $t = 15.6\,$s. Dunque, dopo $7.8\,$s si comprime il cubo con il pistone azionato tramite elettrocalamita.
+
+\subsection{Registrazione e ricostruzione}
+La registrazione nel caso dinamico differisce da quella descritta in sezione \ref{Reg&Ric} soltanto per l'azionamento del pistone dopo $7.8\,$s.
+Si ottiene quindi l'ologramma in figura \ref{fig:qubo}.
+
+Durante la compressione il cubo viene deformato. Ne risulta una differenza di cammino ottico tra il fascio che incide sulla faccia piana (prima della compressione) e quello che incide sulla faccia deformata (durante la compressione). Questo si concretizza in frange, derivanti dall'interferenza fra questi fasci. In particolare ci aspettiamo che ogni frangia sia dovuta ad una differenza di cammino ottico di $\lambda/2$, dunque nella parte superiore in cui le frange sono più fitte, il (gradiente) di deformazione sarà più elevato.\\
+Ciò che abbiamo osservato quindi è la sovrapposizione dei due campi provenienti dai due stati del cubo ricostruiti. È importante notare quindi che l'interferenza non avviene in fase di registrazione ma soltanto in fase di ricostruzione. I due fasci infatti imprimono separatamente sulla lastra la loro informazione, è poi durante la ricostruzione che avviene l'interferenza.
+\begin{center}
+    \centering
+    \includegraphics[width=0.8\linewidth]{F0517C3B-DD3E-45FD-A85E-26DC6DB0C5D6_1_201_a.jpeg}
+    \captionsetup{type=figure}
+    \caption{Ologramma del cubo.}
+    \label{fig:qubo}
+\end{center}
+
+\section{Conclusioni}
+Dalle mappature si vede che l'allineamento può essere migliorato, cercando di centrare il fascio con la piastrina. Nonostante ciò gli ologrammi sono stati ottenuti.\\
+Dalla figura di interferenza visibile in figura \ref{fig:qubo} è possibile misurare la deformazione subita dal cubo.
+\\
+\\
+\\
+\\
+\\
+\\
+
+\end{multicols}
+
+
+
+\end{document}
