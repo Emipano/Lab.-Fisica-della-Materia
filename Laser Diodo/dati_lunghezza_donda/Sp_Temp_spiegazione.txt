@@ -1,0 +1,7 @@
+Tutti i file con nome Sp_T** sono i file di spettro al variare della temperatura.
+
+** Inndica la temp in °C
+
+Le acquisizioni sono mediate 10 volte e il tempo di integrazione è di 3ms
+
+Le acqusizioni sono con lente che non collima (laser non pallinico sulla fibra) e con filtro neutro davanti
