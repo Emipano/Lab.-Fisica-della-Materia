@@ -9,12 +9,13 @@ phi_v-=270
 
 
 fig = plt.figure()
-plt.errorbar(phi_o, I_o, yerr=dI_o, fmt=".-")
-plt.errorbar(phi_v, I_v, yerr=dI_v, fmt=".-")
-plt.legend("Orizzontale", "Verticale")
+plt.errorbar(phi_o, I_o, yerr=dI_o, label="Orizzontale", fmt=".-")
+plt.errorbar(phi_v, I_v, yerr=dI_v, label="Verticale", fmt=".-")
 plt.grid(which="both", ls="dashed", color="gray")
 plt.title("Apertura Angolare")
-plt.xlabel("\phi[°]")
-plt.ylabel("I [\mu A]")
+plt.xlabel(r"$\varphi$ [°]")
+plt.ylabel("I [$\mu$A]")
+plt.legend()
 plt.show()
+
 
