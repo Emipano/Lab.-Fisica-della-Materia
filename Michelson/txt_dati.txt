@@ -28,4 +28,13 @@ ANALISI VERDE SPOSTAMENTI VARI
 Numero di picchi
 [222, 219, 221, 215, 258, 70, 70, 260, 259, 257]
 
+
 Lunghezza d'onda stimata: (550.05 +/- 12.62) nm
+
+
+INDICE DI RIFRAZIONE (GIORNO 3)
+
+Indice di rifrazione stimato: 1.0002687372727275 +/- 0.000005
+Indice di rifrazione aspettato: 1.000270611
+Distanza in barre d'errore: 0.3785118612634523
+Indice del vuoto che fa la camera mediando i nostri conteggi dei picchi: 1.0000047509999999
