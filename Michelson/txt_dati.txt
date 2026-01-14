@@ -1,0 +1,31 @@
+ANALISI ROSSO 70 um
+
+Numero di picchi
+[221, 224, 215, 217, 217, 218, 217, 219, 215, 217, 219, 216, 225, 218]
+
+Lunghezza d'onda stimata: (641.24 +/- 8.46) nm
+Spostamenti
+[69.93, 70.88, 68.03, 68.66, 68.66, 68.98, 68.66, 69.29, 68.03, 68.66, 69.29, 68.34, 71.19, 68.98]
+Media sposatmenti: (69.1 +/- 0.9) um
+
+
+
+ANALISI VERDE 70 um
+
+Numero di picchi
+[258, 260, 259, 257]
+
+
+Lunghezza d'onda stimata: (541.76 +/- 2.71) nm
+Spostamenti
+[68.61, 69.14, 68.87, 68.34]
+Media sposatmenti: (68.7 +/- 0.3) um
+
+
+
+ANALISI VERDE SPOSTAMENTI VARI
+
+Numero di picchi
+[222, 219, 221, 215, 258, 70, 70, 260, 259, 257]
+
+Lunghezza d'onda stimata: (550.05 +/- 12.62) nm
