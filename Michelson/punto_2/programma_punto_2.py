@@ -8,7 +8,7 @@ from scipy.signal import find_peaks as fp
 # heights = []
 # spost = []
 
-data = r"C:\Users\Gruppo 7\Desktop\G7_2025\punto_2\punto2_acq1.txt"
+data = r"/Users/valeriofrancopecchia/Desktop/Fisica/LabMateriaGit/Michelson/punto_2/punto2_acq1.txt"
 
 x, y = np.loadtxt(data, unpack = True, skiprows = 1)
 

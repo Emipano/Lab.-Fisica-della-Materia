@@ -8,7 +8,7 @@ num_picchi_list = []
 heights = [0.35, 0.32, 0.31, 0.32, 0.4, 0.5, 0.5, 0.5, 0.45, 0.5, 0.5, 0.5]
 
 for index in range(1, 13):
-    data = r"C:\Users\Gruppo 7\Desktop\G7_2025\dati_michelefiglio_rosso\dati_michelson_rosso_{}.txt".format(index)
+    data = r"/Users/valeriofrancopecchia/Desktop/Fisica/LabMateriaGit/Michelson/misura lambda/laser_HeNe/dati_michelson_rosso_{}.txt".format(index)
 
     x, y = np.loadtxt(data, unpack = True, skiprows = 1)
 
@@ -41,7 +41,7 @@ print("Lunghezza d'onda stimata: ({} +/- {}) nm".format(round(lambda_tot*1e9, 2)
 
 ## Cambia punti in virgole
 for index in range(12, 13):
-    data = r"C:\Users\Gruppo 7\Desktop\G7_2025\dati_michelefiglio_rosso\dati_michelson_rosso_{}.txt".format(index)
+    data = r'/Users/valeriofrancopecchia/Desktop/Fisica/LabMateriaGit/Michelson/misura lambda/laser_HeNe/dati_michelson_rosso_{}.txt'.format(index)
     with open(data, "r") as f:
         text = f.read()
         text = text.replace(",", ".")
