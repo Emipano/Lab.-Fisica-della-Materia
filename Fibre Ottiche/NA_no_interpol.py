@@ -5,7 +5,7 @@ matplotlib.use('TkAgg')
 
 data = np.loadtxt('Apertura_numerica_1.txt', skiprows=2)
 gradi = data[:, 0]
-dg = data[:, 1]
+dg = data[:, 1]#/np.sqrt(12)
 P = data[:, 2]
 dP = data[:, 3]
 
