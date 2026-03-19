@@ -8,9 +8,9 @@ gradi = data[:, 0]
 dg = data[:, 1]#/np.sqrt(12)
 P = data[:, 2]
 dP = data[:, 3]
-
+#dg = dg/np.sqrt(12)
 gradi = gradi - 43
-I = P/1 # [W/cm^2]
+I = P/1 # [muW/cm^2]
 
 I_max = np.max(I)
 I_5 = 0.05 * I_max
@@ -23,7 +23,7 @@ gradi_5 = np.mean(abs(gradi_int))
 dg_int = dg[mask]
 print(dg_int)
 dg_5 = np.sqrt(np.sum(dg_int**2))
-
+print("dg = ",dg_5)
 print(f'Gradi corrispondenti a I_5%: {gradi_5} +/- {dg_5}')
 
 n_a= 1.00027653*np.sin(np.radians(gradi_5))
@@ -34,9 +34,8 @@ I_5 = np.full_like(x, I_5)
 fig = plt.figure()
 plt.errorbar(gradi, I, dP, dg, fmt='.', label='Dati')
 plt.plot(x, I_5, color="red")
-plt.xlabel('Gradi')
-plt.ylabel('Intensità')
-plt.title('Intensità in funzione dei gradi')
-plt.legend()
-plt.grid()
+plt.xlabel('Angolo [°]')
+plt.ylabel('Intensità [$\mu$W/cm$^2$]')
+plt.title('Intensità in funzione dell\'angolo')
+plt.legend(['I_5%', 'Dati'])
 plt.show()

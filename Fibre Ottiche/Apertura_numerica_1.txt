@@ -1,5 +1,5 @@
 Apertura numerica fibra
-angolo[°]	dangolo[°]	potenza[\muW]		dpotenza[]
+angolo[°]	dangolo[°]	potenza[W]		dpotenza[]
 60	1	230e-9		3e-9
 59	1	375e-9		5e-9
 58	1	547e-9		3e-9
